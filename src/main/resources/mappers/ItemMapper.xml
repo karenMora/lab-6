@@ -5,7 +5,8 @@
   
 <mapper namespace="edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ItemMapper">
 
-
+<select parameterType="map" id="consultarClientes" resultMap="ClienteResult">    
+</select>
     
     
 </mapper>
