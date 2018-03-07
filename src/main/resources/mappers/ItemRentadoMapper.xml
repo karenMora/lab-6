@@ -3,8 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ItemMapper">
-<resultMap type='Cliente' id='ClienteResult'>
-    <id property='item' column="item"></id>
+<resultMap type='ItemRentado' id='ItemRentadoResult'>
+    <id property='id' column="id"></id>
+    <result property='item' column="item"></result>
     <result property="fechainiciorenta" column="fechainiciorenta"></result>
     <result property='fechafinrenta' column="fechafinrenta"></result>    
 </resultMap
