@@ -44,7 +44,8 @@
     <result property='direccion' column="direccion"></result>
     <result property='email' column="email"></result>
     <result property='vetado' column="vetado"></result>
-    <!-- <collection property='vetado' column="vetado"></association>  aun no estan los items prestados-->
+    <!---  -->
+    <collection property='rentados' ofType="ItemRentado" resultMap="ItemRentadoResult"></collection>
 </resultMap>
           	
 </mapper>
