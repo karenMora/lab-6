@@ -45,9 +45,9 @@
     <result property='direccion' column="direccion"></result>
     <result property='email' column="email"></result>
     <result property='vetado' column="vetado"></result>
-    <collection property="rentados" ofType='ItemRentado' columnPrefix='ItemRentado_'></collection>
     <!-- <collection property='vetado' column="vetado"></association>  aun no estan los items prestados-->
     <!---  -->
+    <collection property='rentados' ofType='ItemRentado' resultMap='ItemRentadoResult' columnPrefix='ItemRentado_'></collection>
 </resultMap>
           	
 </mapper>
