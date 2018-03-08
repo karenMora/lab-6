@@ -47,6 +47,7 @@
     <result property='vetado' column="vetado"></result>
     <collection property="rentados" ofType='ItemRentado' columnPrefix='ItemRentado_'></collection>
     <!-- <collection property='vetado' column="vetado"></association>  aun no estan los items prestados-->
+    <!---  -->
 </resultMap>
           	
 </mapper>
