@@ -7,7 +7,7 @@
 <resultMap type='TipoIem' id='TipoIemResult'>
     <id property='id' column="id"></id>
     <result property="descripcion" column="descripcion"></result>
-
+    <association property='TipoIem' javaType="ItTipoIemem" columnPrefix="TipoIem_"></association>
 </resultMap
 
 <select parameterType="map" id="consultarClientes" resultMap="ClienteResult">
@@ -20,19 +20,20 @@
     c.email,
     c.vetado,
     
-    ir.id ,
-    ir.fechainiciorenta ,
-    ir.fechafinrenta ,
+    ir.id as ItemRentado_id,
+    ir.fechainiciorenta as ItemRentado_fechainiciorenta,
+    ir.fechafinrenta as ItemRentado_fechafinrenta,
     
-    i.id ,
-    i.nombre ,
-    i.descripcion ,
-    i.fechalanzamiento ,
-    i.tarifaxdia ,
-    i.formatorenta ,
-    i.genero ,        
-    ti.id ,
-    ti.descripcion 
+    i.id as Item_id,
+    i.nombre as Item_nombre,
+    i.descripcion as Item_descripcion,
+    i.fechalanzamiento as Item_fechalanzamiento,
+    i.tarifaxdia as Item_tarifaxdia,
+    i.formatorenta as Item_formatorenta,
+    i.genero as Item_genero,
+    
+    ti.id as TipoItem_id,
+    ti.descripcion as TipoItem_descripcion
 
     
     FROM VI_CLIENTES as c 

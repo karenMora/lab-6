@@ -3,11 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ItemMapper">
+    
 <resultMap type='ItemRentado' id='ItemRentadoResult'>
     <id property='id' column="id"></id>
     <result property='item' column="item"></result>
     <result property="fechainiciorenta" column="fechainiciorenta"></result>
-    <result property='fechafinrenta' column="fechafinrenta"></result>    
+    <result property='fechafinrenta' column="fechafinrenta"></result>
+    <association property='item' javaType="ItemRentado" columnPrefix="ItemRentado_"></association>
 </resultMap
 
 <select parameterType="map" id="consultarClientes" resultMap="ClienteResult">
@@ -20,19 +22,20 @@
     c.email,
     c.vetado,
     
-    ir.id ,
-    ir.fechainiciorenta ,
-    ir.fechafinrenta ,
+    ir.id ItemRentado_id,
+    ir.fechainiciorenta ItemRentado_fechainiciorenta,
+    ir.fechafinrenta ItemRentado_fechafinrenta,
     
-    i.id ,
-    i.nombre ,
-    i.descripcion ,
-    i.fechalanzamiento ,
-    i.tarifaxdia ,
-    i.formatorenta ,
-    i.genero ,        
-    ti.id ,
-    ti.descripcion 
+    i.id Item_id,
+    i.nombre Item_nombre,
+    i.descripcion Item_descripcion,
+    i.fechalanzamiento Item_fechalanzamiento,
+    i.tarifaxdia Item_tarifaxdia,
+    i.formatorenta Item_formatorenta,
+    i.genero Item_genero,
+    
+    ti.id as TipoItem_id,
+    ti.descripcion as TipoItem_descripcion
 
     
     FROM VI_CLIENTES as c 

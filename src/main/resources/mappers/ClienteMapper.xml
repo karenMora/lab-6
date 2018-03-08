@@ -15,19 +15,20 @@
     c.email,
     c.vetado,
     
-    ir.id ,
-    ir.fechainiciorenta ,
-    ir.fechafinrenta ,
+    ir.id as ItemRentado_id ,
+    ir.fechainiciorenta as ItemRentado_fechainiciorenta,
+    ir.fechafinrenta as ItemRentado_fechafinrenta,
     
-    i.id ,
-    i.nombre ,
-    i.descripcion ,
-    i.fechalanzamiento ,
-    i.tarifaxdia ,
-    i.formatorenta ,
-    i.genero ,        
-    ti.id ,
-    ti.descripcion 
+    i.id as Item_id,
+    i.nombre as Item_nombre,
+    i.descripcion as Item_descripcion,
+    i.fechalanzamiento as Item_fechalanzamiento,
+    i.tarifaxdia as Item_tarifaxdia,
+    i.formatorenta as Item_formatorenta,
+    i.genero as Item_genero,
+    
+    ti.id as TipoItem_id,
+    ti.descripcion as TipoItem_descripcion
 
     
     FROM VI_CLIENTES as c 
@@ -44,6 +45,7 @@
     <result property='direccion' column="direccion"></result>
     <result property='email' column="email"></result>
     <result property='vetado' column="vetado"></result>
+    <collection property="rentados" ofType='ItemRentado' columnPrefix='ItemRentado_'></collection>
     <!-- <collection property='vetado' column="vetado"></association>  aun no estan los items prestados-->
 </resultMap>
           	
